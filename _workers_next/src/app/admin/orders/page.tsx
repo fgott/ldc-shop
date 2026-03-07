@@ -48,7 +48,8 @@ export default async function AdminOrdersPage(props: {
             sql`${orders.productName} LIKE ${like}`,
             sql`COALESCE(${orders.username}, '') LIKE ${like}`,
             sql`COALESCE(${orders.email}, '') LIKE ${like}`,
-            sql`COALESCE(${orders.tradeNo}, '') LIKE ${like}`
+            sql`COALESCE(${orders.tradeNo}, '') LIKE ${like}`,
+            sql`COALESCE(${orders.cardKey}, '') LIKE ${like}`
         ))
     }
     const whereExpr = whereParts.length ? and(...whereParts) : undefined
